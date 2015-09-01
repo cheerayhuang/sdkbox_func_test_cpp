@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
+#include "MyPluginsMgr.h"
 
 USING_NS_CC;
 
@@ -41,6 +42,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     FileUtils::getInstance()->addSearchPath("res");
 
+    // init plugins
+    MyPluginsMgr::getInstance()->init();
+    
     // create a scene. it's an autorelease object
     auto scene = HelloWorld::createScene();
 

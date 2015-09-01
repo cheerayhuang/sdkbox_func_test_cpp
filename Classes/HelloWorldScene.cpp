@@ -2,6 +2,8 @@
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 
+#include "MyPluginsMgr.h"
+
 USING_NS_CC;
 
 using namespace cocostudio::timeline;
@@ -31,9 +33,52 @@ bool HelloWorld::init()
         return false;
     }
     
-    auto rootNode = CSLoader::createNode("MainScene.csb");
-
-    addChild(rootNode);
-
+    float delayTime = 2;
+    Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(MyPluginsMgr::adcolonyFunc),
+                                                      MyPluginsMgr::getInstance(),
+                                                      0, 0, delayTime, false);
+    delayTime += 2;
+    Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(MyPluginsMgr::chartboostFunc),
+                                                      MyPluginsMgr::getInstance(),
+                                                      0, 0, delayTime, false);
+    delayTime += 2;
+    Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(MyPluginsMgr::vungleFunc),
+                                                      MyPluginsMgr::getInstance(),
+                                                      0, 0, delayTime, false);
+    
+    delayTime += 2;
+    Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(MyPluginsMgr::flurryFunc),
+                                                      MyPluginsMgr::getInstance(),
+                                                      0, 0, delayTime, false);
+    
+    delayTime += 2;
+    Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(MyPluginsMgr::googleFunc),
+                                                      MyPluginsMgr::getInstance(),
+                                                      0, 0, delayTime, false);
+    
+    delayTime += 2;
+    Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(MyPluginsMgr::iapFunc),
+                                                      MyPluginsMgr::getInstance(),
+                                                      0, 0, delayTime, false);
+    
+    delayTime += 2;
+    Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(MyPluginsMgr::kochavaFunc),
+                                                      MyPluginsMgr::getInstance(),
+                                                      0, 0, delayTime, false);
+    
+    delayTime += 2;
+    Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(MyPluginsMgr::tuneFunc),
+                                                      MyPluginsMgr::getInstance(),
+                                                      0, 0, delayTime, false);
+    
+    delayTime += 2;
+    Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(MyPluginsMgr::agecheqFunc),
+                                                      MyPluginsMgr::getInstance(),
+                                                      0, 0, delayTime, false);
+    
+    delayTime += 2;
+    Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(MyPluginsMgr::facebookFunc),
+                                                      MyPluginsMgr::getInstance(),
+                                                      0, 0, delayTime, false);
     return true;
 }
