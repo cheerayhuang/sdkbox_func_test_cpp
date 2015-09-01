@@ -93,11 +93,20 @@ void MyPluginsMgr::adcolonyFunc(float)
 
 class CBListener : public sdkbox::ChartboostListener
 {
+private:
+    static bool isPlayed;
+    
 public:
     //Ad callbacks
     void onChartboostCached(const std::string& name)
     {
         CCLOG("Chartboost ad: %s cached", name.c_str());
+        
+        if (!isPlayed) {
+            PluginChartboost::show(CB_Location_Default);
+            PluginChartboost::show("Level Complete");
+            isPlayed = false;
+        }
     }
     bool onChartboostShouldDisplay(const std::string& name)
     {
@@ -144,22 +153,18 @@ public:
     }
 };
 
+bool CBListener::isPlayed = false;
+
 void MyPluginsMgr::initChartBoost()
 {
     PluginChartboost::init();
     PluginChartboost::setListener(new CBListener);
-    
-    //PluginChartboost::show(sdkbox::CB_Location_Default);
-    //PluginChartboost::show("Level Complete");
-    
+   
 }
 
 void MyPluginsMgr::chartboostFunc(float)
 {
-    CCLOG("Calling chartboost functions");
-    
-    PluginChartboost::show(CB_Location_Default);
-    PluginChartboost::show("Level Complete");
+
 }
 
 // vungle
