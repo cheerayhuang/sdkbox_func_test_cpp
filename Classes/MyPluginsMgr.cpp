@@ -755,6 +755,14 @@ void MyPluginsMgr::initFacebook()
     PluginFacebook::setListener(new MyFacebookListener);
 }
 
+void MyPluginsMgr::facebookFunc(float)
+{
+    
+}
+
+
+// method of MyPluginsMgr
+
 MyPluginsMgr::MyPluginsMgr()
 {
 }
