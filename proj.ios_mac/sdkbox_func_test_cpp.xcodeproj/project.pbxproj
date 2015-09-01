@@ -210,7 +210,7 @@
 		9F544443B9E153E07908358D /* PluginIAP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PluginIAP.framework; sourceTree = "<group>"; };
 		A3D24FC4B28BA61464587604 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		A41A43D3A76985272FC11149 /* PluginGoogleAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PluginGoogleAnalytics.framework; sourceTree = "<group>"; };
-		BCD74A149DC46B8ADD65DD04 /* libcocos2d iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2d iOS.a"; path = "/Applications/Cocos/frameworks/cocos2d-x-3.6/prebuilt/ios/libcocos2d iOS.a"; sourceTree = "<absolute>"; };
+		BCD74A149DC46B8ADD65DD04 /* libcocos2d iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2d iOS.a"; path = "/Applications/Cocos/frameworks/cocos2d-x/prebuilt/ios/libcocos2d iOS.a"; sourceTree = "<absolute>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -226,7 +226,7 @@
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D6AB4E49BE0538824D101F46 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
-		DD0E441CA891805BCDF81F27 /* libcocos2d Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2d Mac.a"; path = "/Applications/Cocos/frameworks/cocos2d-x-3.6/prebuilt/mac/libcocos2d Mac.a"; sourceTree = "<absolute>"; };
+		DD0E441CA891805BCDF81F27 /* libcocos2d Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2d Mac.a"; path = "/Applications/Cocos/frameworks/cocos2d-x/prebuilt/mac/libcocos2d Mac.a"; sourceTree = "<absolute>"; };
 		F1574D4DB615C1BFA71F8B3C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libsqlite3.dylib; sourceTree = DEVELOPER_DIR; };
 		F1F840309D7328DA46C8C540 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
 		F6BA461A9D98974FEE252C2C /* MobileAppTracker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MobileAppTracker.framework; sourceTree = "<group>"; };
@@ -575,7 +575,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0640;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = MDDB52YB8L;
@@ -675,7 +675,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
-				FRAMEWORK_SEARCH_PATHS = "\"/Users/huangqiyu/work/cocos/cpp361/proj.ios_mac/\"";
+				FRAMEWORK_SEARCH_PATHS = ../proj.ios_mac;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -689,13 +689,13 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/cocos/platform/ios",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/cocos/platform/ios/Simulation",
+					"/Applications/Cocos/frameworks/cocos2d-x/cocos/platform/ios",
+					"/Applications/Cocos/frameworks/cocos2d-x/cocos/platform/ios/Simulation",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/prebuilt/ios",
+					"/Applications/Cocos/frameworks/cocos2d-x/prebuilt/ios",
 					"\"sdkbox.framework\"",
 					"\"PluginAdColony.framework\"",
 					"\"AdColony.framework\"",
@@ -736,7 +736,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
-				FRAMEWORK_SEARCH_PATHS = "\"/Users/huangqiyu/work/cocos/cpp361/proj.ios_mac/\"";
+				FRAMEWORK_SEARCH_PATHS = ../proj.ios_mac;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ios/Prefix.pch;
@@ -748,13 +748,13 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/cocos/platform/ios",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/cocos/platform/ios/Simulation",
+					"/Applications/Cocos/frameworks/cocos2d-x/cocos/platform/ios",
+					"/Applications/Cocos/frameworks/cocos2d-x/cocos/platform/ios/Simulation",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/prebuilt/ios",
+					"/Applications/Cocos/frameworks/cocos2d-x/prebuilt/ios",
 					"\"sdkbox.framework\"",
 					"\"PluginAdColony.framework\"",
 					"\"AdColony.framework\"",
@@ -793,9 +793,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "\"/Users/huangqiyu/work/cocos/cpp361/proj.ios_mac/\"";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -810,12 +810,12 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/cocos/platform/mac",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/external/glfw3/include/mac",
+					"/Applications/Cocos/frameworks/cocos2d-x/cocos/platform/mac",
+					"/Applications/Cocos/frameworks/cocos2d-x/external/glfw3/include/mac",
 				);
 				INFOPLIST_FILE = mac/Info.plist;
 				LIBRARY_SEARCH_PATHS = (
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/prebuilt/mac",
+					"/Applications/Cocos/frameworks/cocos2d-x/prebuilt/mac",
 					"\"sdkbox.framework\"",
 					"\"PluginAdColony.framework\"",
 					"\"AdColony.framework\"",
@@ -851,9 +851,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "\"/Users/huangqiyu/work/cocos/cpp361/proj.ios_mac/\"";
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -866,12 +866,12 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/cocos/platform/mac",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/external/glfw3/include/mac",
+					"/Applications/Cocos/frameworks/cocos2d-x/cocos/platform/mac",
+					"/Applications/Cocos/frameworks/cocos2d-x/external/glfw3/include/mac",
 				);
 				INFOPLIST_FILE = mac/Info.plist;
 				LIBRARY_SEARCH_PATHS = (
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/prebuilt/mac",
+					"/Applications/Cocos/frameworks/cocos2d-x/prebuilt/mac",
 					"\"sdkbox.framework\"",
 					"\"PluginAdColony.framework\"",
 					"\"AdColony.framework\"",
@@ -914,19 +914,19 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/cocos",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/cocos/base",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/cocos/physics",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/cocos/math",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/cocos/2d",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/cocos/ui",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/cocos/network",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/cocos/audio/include",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/cocos/editor-support",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/extensions",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/external",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/external/chipmunk/include/chipmunk",
+					"/Applications/Cocos/frameworks/cocos2d-x",
+					"/Applications/Cocos/frameworks/cocos2d-x/cocos",
+					"/Applications/Cocos/frameworks/cocos2d-x/cocos/base",
+					"/Applications/Cocos/frameworks/cocos2d-x/cocos/physics",
+					"/Applications/Cocos/frameworks/cocos2d-x/cocos/math",
+					"/Applications/Cocos/frameworks/cocos2d-x/cocos/2d",
+					"/Applications/Cocos/frameworks/cocos2d-x/cocos/ui",
+					"/Applications/Cocos/frameworks/cocos2d-x/cocos/network",
+					"/Applications/Cocos/frameworks/cocos2d-x/cocos/audio/include",
+					"/Applications/Cocos/frameworks/cocos2d-x/cocos/editor-support",
+					"/Applications/Cocos/frameworks/cocos2d-x/extensions",
+					"/Applications/Cocos/frameworks/cocos2d-x/external",
+					"/Applications/Cocos/frameworks/cocos2d-x/external/chipmunk/include/chipmunk",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"\"sdkbox.framework\"",
@@ -969,19 +969,19 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/cocos",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/cocos/base",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/cocos/physics",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/cocos/math",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/cocos/2d",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/cocos/ui",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/cocos/network",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/cocos/audio/include",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/cocos/editor-support",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/extensions",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/external",
-					"/Applications/Cocos/frameworks/cocos2d-x-3.6/external/chipmunk/include/chipmunk",
+					"/Applications/Cocos/frameworks/cocos2d-x",
+					"/Applications/Cocos/frameworks/cocos2d-x/cocos",
+					"/Applications/Cocos/frameworks/cocos2d-x/cocos/base",
+					"/Applications/Cocos/frameworks/cocos2d-x/cocos/physics",
+					"/Applications/Cocos/frameworks/cocos2d-x/cocos/math",
+					"/Applications/Cocos/frameworks/cocos2d-x/cocos/2d",
+					"/Applications/Cocos/frameworks/cocos2d-x/cocos/ui",
+					"/Applications/Cocos/frameworks/cocos2d-x/cocos/network",
+					"/Applications/Cocos/frameworks/cocos2d-x/cocos/audio/include",
+					"/Applications/Cocos/frameworks/cocos2d-x/cocos/editor-support",
+					"/Applications/Cocos/frameworks/cocos2d-x/extensions",
+					"/Applications/Cocos/frameworks/cocos2d-x/external",
+					"/Applications/Cocos/frameworks/cocos2d-x/external/chipmunk/include/chipmunk",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"\"sdkbox.framework\"",
