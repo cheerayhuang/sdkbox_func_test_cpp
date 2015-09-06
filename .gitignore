@@ -50,3 +50,5 @@ DerivedData
 *.swp
 testbuild.*
 
+#cocos
+bin/
