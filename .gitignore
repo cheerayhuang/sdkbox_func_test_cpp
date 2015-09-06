@@ -50,5 +50,21 @@ DerivedData
 *.swp
 testbuild.*
 
-#cocos
+# Plugins
 bin/
+
+build/
+
+AdColony.framework/
+VungleSDK.framework/
+sdkbox.framework/
+PluginKochava.framework/
+PluginAdColony.framework/
+PluginVungle.framework/
+PluginGoogleAnalytics.framework/
+PluginFlurryAnalytics.framework/
+PluginIAP.framework/
+MobileAppTracker.framework/
+PluginTune.framework/
+PluginAgeCheq.framework/
+PluginSoomlaGrow.framework/
