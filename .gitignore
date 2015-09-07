@@ -75,6 +75,20 @@ FBSDKShareKit.framework/
 Chartboost.framework/
 PluginChartboost.framework/
 
+proj.android/jni/pluginadcolony/
+proj.android/jni/pluginagecheq/
+proj.android/jni/pluginchartboost/
+proj.android/jni/pluginfacebook/
+proj.android/jni/pluginflurryanalytics/
+proj.android/jni/plugingoogleanalytics/
+proj.android/jni/pluginiap/
+proj.android/jni/pluginkochava/
+proj.android/jni/plugintune/
+proj.android/jni/pluginvungle/
+proj.android/jni/sdkbox/
+proj.android/libs/
+proj.android/res/xml/
+
 
 # installer
 .sdkbox_packages.json
