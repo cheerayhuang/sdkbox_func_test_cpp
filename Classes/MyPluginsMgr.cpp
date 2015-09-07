@@ -208,7 +208,7 @@ public:
         }
     }
     
-    virtual void onVungleAdReward(std::string adName){}
+    void onVungleAdReward(const std::string& adName){}
 };
 
 bool VungleListenerDemo::isPlayed = false;
