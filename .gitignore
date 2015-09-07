@@ -68,3 +68,14 @@ MobileAppTracker.framework/
 PluginTune.framework/
 PluginAgeCheq.framework/
 PluginSoomlaGrow.framework/
+PluginFacebook.framework/
+FBSDKCoreKit.framework/
+FBSDKLoginKit.framework/
+FBSDKShareKit.framework/
+Chartboost.framework/
+PluginChartboost.framework/
+
+
+# installer
+.sdkbox_packages.json
+
