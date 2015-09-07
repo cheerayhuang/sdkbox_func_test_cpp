@@ -19,6 +19,7 @@
 #include "PluginKochava/PluginKochava.h"
 #include "PluginTune/PluginTune.h"
 #include "PluginFacebook/PluginFacebook.h"
+#include "PluginFlurryAnalytics/PluginFlurryAnalytics.h"
 
 USING_NS_CC;
 using namespace sdkbox;
@@ -227,7 +228,7 @@ void MyPluginsMgr::vungleFunc(float)
 
 // flurryanalystics
 
-#include "PluginFlurryAnalytics/PluginFlurryAnalytics.h"
+
 static bool flurryAnalyticsSendData() {
     std::string ret;
     
