@@ -20,6 +20,7 @@
 #include "PluginTune/PluginTune.h"
 #include "PluginFacebook/PluginFacebook.h"
 #include "PluginFlurryAnalytics/PluginFlurryAnalytics.h"
+#include "PluginFyber/PluginFyber.h"
 
 USING_NS_CC;
 using namespace sdkbox;
@@ -74,20 +75,15 @@ void MyPluginsMgr::initAdColony()
     PluginAdColony::setListener(new ADListener);
     PluginAdColony::getStatus("video");
     PluginAdColony::setCustomID("test");
-    
-    auto eventDispatcher = Director::getInstance()->getEventDispatcher();
-    eventDispatcher->addCustomEventListener("adcolony1", [](EventCustom *) { PluginAdColony::show("video"); });
-    eventDispatcher->addCustomEventListener("adcolony2", [](EventCustom *) { PluginAdColony::show("v4vc"); });
-    //PluginAdColony::show("video");
-    //PluginAdColony::show("v4vc");
 }
 
 void MyPluginsMgr::adcolonyFunc(float)
 {
     CCLOG("calling adcolony funcstions");
-    
+
     PluginAdColony::show("video");
     PluginAdColony::show("v4vc");
+
 }
 
 // Chartboost
@@ -96,13 +92,13 @@ class CBListener : public sdkbox::ChartboostListener
 {
 private:
     static bool isPlayed;
-    
+
 public:
     //Ad callbacks
     void onChartboostCached(const std::string& name)
     {
         CCLOG("Chartboost ad: %s cached", name.c_str());
-        
+
         if (!isPlayed) {
             PluginChartboost::show(CB_Location_Default);
             PluginChartboost::show("Level Complete");
@@ -142,7 +138,7 @@ public:
     {
         CCLOG("Chartboost ad: %s Failed to record click: %d", name.c_str(), e);
     }
-    
+
     //Miscellaneous callbacks
     void onChartboostConfirmation()
     {
@@ -160,7 +156,7 @@ void MyPluginsMgr::initChartBoost()
 {
     PluginChartboost::init();
     PluginChartboost::setListener(new CBListener);
-   
+
 }
 
 void MyPluginsMgr::chartboostFunc(float)
@@ -174,19 +170,19 @@ class VungleListenerDemo : public sdkbox::VungleListener
 {
 private:
     static bool isPlayed;
-    
+
 public:
     void onVungleCacheAvailable()
     {
         CCLOG("Cache Available");
-        
+
         if (!isPlayed) {
             CCLOG("show video");
             PluginVungle::show("video");
-        
+
             CCLOG("show reward");
             PluginVungle::show("reward");
-            
+
             isPlayed = true;
         }
     }
@@ -198,7 +194,7 @@ public:
     {
         CCLOG("Finish Displaying ad, resume game/music here");
     }
-    
+
     void onVungleAdViewed(bool isComplete)
     {
         if (isComplete) {
@@ -207,7 +203,7 @@ public:
             CCLOG("User didn't finish viewing the ad");
         }
     }
-    
+
     void onVungleAdReward(const std::string& adName){}
 };
 
@@ -218,7 +214,7 @@ void MyPluginsMgr::initVungle()
     sdkbox::PluginVungle::init();
     sdkbox::PluginVungle::setDebug(true);
     sdkbox::PluginVungle::setListener(new VungleListenerDemo);
-    
+
 }
 
 void MyPluginsMgr::vungleFunc(float)
@@ -231,83 +227,83 @@ void MyPluginsMgr::vungleFunc(float)
 
 static bool flurryAnalyticsSendData() {
     std::string ret;
-    
+
     bool retBool = sdkbox::PluginFlurryAnalytics::activeSessionExists();
     if (!retBool) {
         CCLOG("session not exist return");
         return false;
     }
-    
+
     ret = sdkbox::PluginFlurryAnalytics::getSessionID();
     CCLOG("Flurry analytics session : %s", ret.c_str());
-    
+
     std::string origin = "this is origin name";
     std::string originVersion = "origin version";
     sdkbox::PluginFlurryAnalytics::addOrigin(origin, originVersion);
-    
+
     origin = "other origin";
     originVersion = "other origin version";
     std::map<std::string, std::string> params;
     params.insert(std::make_pair("key1", "value1"));
     params.insert(std::make_pair("key2", "value2"));
     sdkbox::PluginFlurryAnalytics::addOrigin(origin, originVersion, params);
-    
+
     ret = "test event1";
     sdkbox::PluginFlurryAnalytics::logEvent(ret);
-    
+
     ret = "test event2";
     params.clear();
     params.insert(std::make_pair("eKey1", "eVal1"));
     params.insert(std::make_pair("eKey2", "eVal2"));
     sdkbox::PluginFlurryAnalytics::logEvent(ret, params);
-    
+
     ret = "test event3";
     sdkbox::PluginFlurryAnalytics::logEvent(ret, true);
     sdkbox::PluginFlurryAnalytics::endTimedEvent(ret);
-    
+
     ret = "test event4";
     params.clear();
     params.insert(std::make_pair("eKey3", "eVal3"));
     params.insert(std::make_pair("eKey4", "eVal4"));
     sdkbox::PluginFlurryAnalytics::logEvent(ret, params, true);
     sdkbox::PluginFlurryAnalytics::endTimedEvent(ret, params);
-    
+
     ret = "error test";
     std::string msg = "log errror msg";
     std::string ifno = "log error info";
     sdkbox::PluginFlurryAnalytics::logError(ret, msg, ifno);
-    
+
     sdkbox::PluginFlurryAnalytics::logPageView();
-    
+
     ret = "this is user id";
     sdkbox::PluginFlurryAnalytics::setUserID(ret);
     sdkbox::PluginFlurryAnalytics::setAge(11);
     ret = "m"; // m:male  f:female  u:unkonw
     sdkbox::PluginFlurryAnalytics::setGender(ret);
-    
+
     sdkbox::PluginFlurryAnalytics::pauseBackgroundSession();
-    
+
     sdkbox::PluginFlurryAnalytics::setReportLocation(true);
-    
+
     sdkbox::PluginFlurryAnalytics::clearLocation();
     //chendu, sichuan, china
     sdkbox::PluginFlurryAnalytics::setLatitude(104.06, 30.67, 0, 0);
-    
+
     sdkbox::PluginFlurryAnalytics::setSessionReportsOnCloseEnabled(true);
     sdkbox::PluginFlurryAnalytics::setSessionReportsOnPauseEnabled(true);
     sdkbox::PluginFlurryAnalytics::setBackgroundSessionEnabled(true);
-    
+
     sdkbox::PluginFlurryAnalytics::setEventLoggingEnabled(true);
     sdkbox::PluginFlurryAnalytics::setPulseEnabled(true);
-    
+
     sdkbox::PluginFlurryAnalytics::endSession();
-    
+
     CCLOG("Flurry analytics send data finish");
-    
+
     return  true;
 }
 class FAListener : public sdkbox::FlurryAnalyticsListener {
-    
+
 public:
     void flurrySessionDidCreateWithInfo(std::map<std::string, std::string>& info)
     {
@@ -327,16 +323,16 @@ void MyPluginsMgr::initFlurry()
         CCLOG(">>> FAIL! init flurry analytics fail<<<");
         return ;
     }
-    
+
     //must call befor start session
     std::string ret = sdkbox::PluginFlurryAnalytics::getFlurryAgentVersion();
     CCLOG("FlurryVersion: %s", ret.c_str());
     sdkbox::PluginFlurryAnalytics::setShowErrorInLogEnabled(true);
-    
+
     CCLOG("invoke set listener");
     sdkbox::FlurryAnalyticsListener *listener = new FAListener();
     sdkbox::PluginFlurryAnalytics::setListener(listener);
-    
+
 }
 
 void MyPluginsMgr::flurryFunc(float)
@@ -351,13 +347,13 @@ void MyPluginsMgr::flurryFunc(float)
 void MyPluginsMgr::initGoogleAnalytics()
 {
     PluginGoogleAnalytics::init();
-    
+
 }
 
 void MyPluginsMgr::googleFunc(float)
 {
     CCLOG("[GoogleAnalytics] sending data");
-    
+
     PluginGoogleAnalytics::logTiming("Startup", 0, "timing name", "timing label");
     PluginGoogleAnalytics::logEvent("EventCategory 1", "EventAction 1", "EventLabel 1", 10);
     PluginGoogleAnalytics::logScreen("Screen1");
@@ -380,11 +376,11 @@ public:
     {
         Product test;
         test.name = "remove_ads";
-        
+
         _products.push_back(test);
         updateIAP(_products);
     }
-    
+
     // a selector callback
     void onShowAds(cocos2d::Ref* sender)
     {
@@ -402,57 +398,57 @@ public:
     {
         auto btn = static_cast<Node*>(sender);
         Product* p = (Product*)btn->getUserData();
-        
+
         CCLOG("Start IAP %s", p->name.c_str());
         IAP::purchase(p->name);
     }
-    
+
 private:
-    
+
     void updateIAP(const std::vector<sdkbox::Product>& products)
     {
-        
+
     }
-    
+
     virtual void onSuccess(sdkbox::Product const& p) override
     {
     }
-    
+
     virtual void onFailure(sdkbox::Product const& p, const std::string &msg) override
     {
-        
+
     }
-    
+
     virtual void onCanceled(sdkbox::Product const& p) override
     {
-        
+
     }
-    
+
     virtual void onRestored(sdkbox::Product const& p) override
     {
-        
+
     }
-    
+
     virtual void onProductRequestSuccess(std::vector<sdkbox::Product> const &products) override
     {
-        
+
     }
-    
+
     virtual void onProductRequestFailure(const std::string &msg) override
     {
-        
+
     }
-    
+
     virtual void onInitialized(bool ok)
     {
-        
+
     }
-    
+
     virtual void onRestoreComplete(bool ok, const std::string &msg)
     {
-        
+
     }
-    
+
     std::vector<sdkbox::Product> _products;
 };
 
@@ -461,7 +457,7 @@ void MyPluginsMgr::initIAP()
     IAP::init();
     IAP::setDebug(true);
     IAP::setListener(new IAPListenerDemo);
-    
+
 }
 
 void MyPluginsMgr::iapFunc(float)
@@ -476,7 +472,7 @@ void MyPluginsMgr::iapFunc(float)
 void MyPluginsMgr::initKochava()
 {
     PluginKochava::init();
-    
+
     PluginKochava::trackEvent("KochavaCustomEvent", "HelloWorld");
 }
 
@@ -488,7 +484,7 @@ void MyPluginsMgr::kochavaFunc(float)
         {
             typedef std::map<std::string, std::string> map_type;
             const map_type& m = *attribution;
-            
+
             for (map_type::const_iterator it = m.begin(); it != m.end(); ++it)
             {
                 const map_type::value_type& kv = *it;
@@ -496,12 +492,12 @@ void MyPluginsMgr::kochavaFunc(float)
             }
         }
     };
-    
+
     PluginKochava::setAttributionCallback(callback);
-    
+
     sdkbox::PluginKochava::trackEvent("KochavaCustomEvent", "HelloWorld");
     sdkbox::PluginKochava::spatialEvent("test", 100, 101, 102);
-    
+
 }
 
 
@@ -526,7 +522,7 @@ public:
     {
         CCLOG("%s: %s", __FUNCTION__, deeplink.data());
     }
-    
+
     void onMobileAppTrackerDidFailDeeplinkWithError(const std::string &errorString)
     {
         CCLOG("%s: %s", __FUNCTION__, errorString.c_str());
@@ -539,7 +535,7 @@ static void testTuneMeasureEvent()
     {
         PluginTune::measureEventName("purchase");
         PluginTune::measureEventId(1122334455);
-        
+
         TuneEvent event;
         event.eventName = "purchase2";
         event.refId     = "RJ1357";
@@ -549,13 +545,13 @@ static void testTuneMeasureEvent()
         event.quantity = 3;
         PluginTune::measureEvent(event);
     }
-    
+
     {
         TuneEventItem item1;
         item1.item = "ball1";
         item1.unitPrice = 3.99;
         item1.quantity = 2;
-        
+
         TuneEventItem item2;
         item2.item = "ball2";
         item2.unitPrice = 9.99;
@@ -563,14 +559,14 @@ static void testTuneMeasureEvent()
         item2.revenue = 9.99;
         item2.attribute1 = "red";
         item2.attribute2 = "inflatable";
-        
-        
+
+
         PluginTune::setUserId("US13579");
         PluginTune::setFacebookUserId("321321321321");
         PluginTune::setGoogleUserId("11223344556677");
         PluginTune::setTwitterUserId("1357924680");
         PluginTune::setLatitude(9.142276, -79.724052, 15);
-        
+
         TuneEvent event;
         event.eventName = "purchase";
         event.eventItems.push_back(item1);
@@ -578,11 +574,11 @@ static void testTuneMeasureEvent()
         event.refId = "ref13571";
         event.revenue = 13.97;
         event.currencyCode = "USD";
-        
+
         PluginTune::measureEvent(event);
-        
+
     }
-    
+
     // https://developers.mobileapptracking.com/settings-for-pre-loaded-apps/
     {
         TunePreloadData pd;
@@ -607,10 +603,10 @@ static void testTuneMeasureEvent()
         pd.advertiserSubKeyword = "ad_sub_keyword";
         pd.advertiserSubPublisher = "ad_sub_publisher";
         pd.advertiserSubSite = "ad_sub_site";
-        
+
         PluginTune::setPreloadData(pd);
         PluginTune::measureSession();
-        
+
     }
 }
 
@@ -639,7 +635,7 @@ void MyPluginsMgr::tuneFunc(float)
     PluginTune::setLatitude(9.142276, -79.724052, 15);
     PluginTune::setAppAdTracking(true);
     PluginTune::measureEventName("login");
-    
+
     testTuneMeasureEvent();
 }
 
@@ -659,10 +655,10 @@ public:
                        bool under18,
                        bool underdevage,
                        int trials);
-    
+
     void associateDataResponse(const std::string& rtn,
                                const std::string& rtnmsg);
-    
+
 };
 
 void ACListener::checkResponse(const std::string &rtn, const std::string &rtnmsg, int apiversion, int checktype, bool appauthorized, bool appblocked, int parentverified, bool under13, bool under18, bool underdevage, int trials) {
@@ -677,14 +673,14 @@ void MyPluginsMgr::initAgeCheq()
 {
     sdkbox::PluginAgeCheq::init();
     sdkbox::PluginAgeCheq::setListener(new ACListener());
-    
+
 }
 
 void MyPluginsMgr::agecheqFunc(float)
 {
     CCLOG("[agecheq] check 1426");
     sdkbox::PluginAgeCheq::check("1426");
-    
+
     CCLOG("associateData 1426, ikfill");
     sdkbox::PluginAgeCheq::associateData("1426", "ikfill");
 }
@@ -696,7 +692,7 @@ class MyFacebookListener : public FacebookListener
 {
 public:
     MyFacebookListener(){}
-    
+
     void onLogin(bool isLogin, const std::string& error)
     {
         CCLOG("##FB isLogin: %d, error: %s", isLogin, error.c_str());
@@ -711,25 +707,25 @@ public:
     void onSharedSuccess(const std::string& message)
     {
         CCLOG("##FB onSharedSuccess:%s", message.c_str());
-        
+
         MessageBox(message.c_str(), "share success");
     }
     void onSharedFailed(const std::string& message)
     {
         CCLOG("##FB onSharedFailed:%s", message.c_str());
-        
+
         MessageBox(message.c_str(), "share failed");
     }
     void onSharedCancel()
     {
         CCLOG("##FB onSharedCancel");
-        
+
         MessageBox("", "share cancel");
     }
     void onPermission(bool isLogin, const std::string& error)
     {
         CCLOG("##FB onPermission: %d, error: %s", isLogin, error.c_str());
-        
+
         std::string title = "permission ";
         title.append((isLogin ? "success" : "failed"));
         MessageBox(error.c_str(), title.c_str());
@@ -737,7 +733,7 @@ public:
     void onFetchFriends(bool ok, const std::string& msg)
     {
         CCLOG("##FB %s: %d = %s", __FUNCTION__, ok, msg.data());
-        
+
         const std::vector<sdkbox::FBGraphUser>& friends = PluginFacebook::getFriends();
         for (int i = 0; i < friends.size(); i++)
         {
@@ -750,7 +746,7 @@ public:
             CCLOG("##FB>> %s", user.isInstalled ? "app is installed" : "app is not installed");
             CCLOG("##FB");
         }
-        
+
         MessageBox("", "fetch friends");
     }
 };
@@ -763,9 +759,94 @@ void MyPluginsMgr::initFacebook()
 
 void MyPluginsMgr::facebookFunc(float)
 {
-    
+
 }
 
+// fyber
+//
+class MyFyberListener : public FyberListener
+{
+private:
+    string BOOL_TO_STRING(bool ok) {
+        return ok ? "yes" : "no";
+    }
+public:
+    void onVirtualCurrencyConnectorFailed(int error,
+                                          const std::string& errorCode,
+                                          const std::string& errorMsg)
+    {
+        CCLOG("[Fyber] onVirtualCurrencyConnectorFailed: error(%d)", error);
+        CCLOG("[Fyber] onVirtualCurrencyConnectorFailed: errorCode(%s)", errorCode.data());
+        CCLOG("[Fyber] onVirtualCurrencyConnectorFailed: errorMsg(%s)", errorMsg.data());
+    }
+    void onVirtualCurrencyConnectorSuccess(double deltaOfCoins,
+                                           const std::string& currencyId,
+                                           const std::string& currencyName,
+                                           const std::string& transactionId)
+    {
+        CCLOG("[Fyber] onVirtualCurrencyConnectorSuccess: deltaOfCoins(%lf)", deltaOfCoins);
+        CCLOG("[Fyber] onVirtualCurrencyConnectorSuccess: currencyId(%s)", currencyId.data());
+        CCLOG("[Fyber] onVirtualCurrencyConnectorSuccess: currencyName(%s)", currencyName.data());
+        CCLOG("[Fyber] onVirtualCurrencyConnectorSuccess: transactionId(%s)", transactionId.data());
+    }
+    void onCanShowInterstitial(bool canShowInterstitial)
+    {
+        CCLOG("[Fyber] onCanShowInterstitial: canShowInterstitial(%s)",
+              BOOL_TO_STRING(canShowInterstitial).c_str());
+
+        if (canShowInterstitial)
+        {
+            PluginFyber::showInterstitial();
+        }
+    }
+    void onInterstitialDidShow()
+    {
+        CCLOG("[Fyber] onInterstitialDidShow");
+    }
+    void onInterstitialDismiss(const std::string& reason)
+    {
+        CCLOG("[Fyber] onInterstitialDismiss: reason(%s)", reason.data());
+    }
+    void onInterstitialFailed()
+    {
+        CCLOG("[Fyber] onInterstitialFailed");
+    }
+
+    void onBrandEngageClientReceiveOffers(bool areOffersAvailable)
+    {
+        CCLOG("[Fyber] onBrandEngageClientReceiveOffers: available(%s)",
+              BOOL_TO_STRING(areOffersAvailable).c_str());
+        if (areOffersAvailable)
+        {
+            PluginFyber::showOffers();
+        }
+    }
+    void onBrandEngageClientChangeStatus(int status, const std::string& msg)
+    {
+        CCLOG("[Fyber] onBrandEngageClientChangeStatus: status(%d)", status);
+        CCLOG("[Fyber] onBrandEngageClientChangeStatus: message(%s)", msg.data());
+    }
+
+    void onOfferWallFinish(int status)
+    {
+        CCLOG("[Fyber] onOfferWallFinish: status(%d)", status);
+    }
+};
+
+void MyPluginsMgr::initFyber()
+{
+    PluginFyber::init();
+    PluginFyber::setListener(new MyFyberListener);
+}
+
+void MyPluginsMgr::fyberFunc(float)
+{
+    CCLOG("[Fyber] Calling fyber apis.");
+    PluginFyber::requestInterstitial();
+    PluginFyber::showOfferWall("rmb");
+    PluginFyber::showOfferWall("rmb");
+    PluginFyber::requestDeltaOfCoins("rmb");
+}
 
 // method of MyPluginsMgr
 
@@ -793,8 +874,9 @@ bool MyPluginsMgr::init()
     initKochava();
     initTune();
     initVungle();
-    //    initFacebook();
+    initFacebook();
     initAgeCheq();
-    
+    initFyber();
+
     return true;
 }

@@ -12,7 +12,7 @@ Scene* HelloWorld::createScene()
 {
     // 'scene' is an autorelease object
     auto scene = Scene::create();
-    
+
     // 'layer' is an autorelease object
     auto layer = HelloWorld::create();
 
@@ -32,7 +32,7 @@ bool HelloWorld::init()
     {
         return false;
     }
-    
+
     float delayTime = 2;
     Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(MyPluginsMgr::adcolonyFunc),
                                                       MyPluginsMgr::getInstance(),
@@ -45,40 +45,46 @@ bool HelloWorld::init()
     Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(MyPluginsMgr::vungleFunc),
                                                       MyPluginsMgr::getInstance(),
                                                       0, 0, delayTime, false);
-    
+
     delayTime += 2;
     Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(MyPluginsMgr::flurryFunc),
                                                       MyPluginsMgr::getInstance(),
                                                       0, 0, delayTime, false);
-    
+
     delayTime += 2;
     Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(MyPluginsMgr::googleFunc),
                                                       MyPluginsMgr::getInstance(),
                                                       0, 0, delayTime, false);
-    
+
     delayTime += 2;
     Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(MyPluginsMgr::iapFunc),
                                                       MyPluginsMgr::getInstance(),
                                                       0, 0, delayTime, false);
-    
+
     delayTime += 2;
     Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(MyPluginsMgr::kochavaFunc),
                                                       MyPluginsMgr::getInstance(),
                                                       0, 0, delayTime, false);
-    
+
     delayTime += 2;
     Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(MyPluginsMgr::tuneFunc),
                                                       MyPluginsMgr::getInstance(),
                                                       0, 0, delayTime, false);
-    
+
     delayTime += 2;
     Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(MyPluginsMgr::agecheqFunc),
                                                       MyPluginsMgr::getInstance(),
                                                       0, 0, delayTime, false);
-    
+
     delayTime += 2;
     Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(MyPluginsMgr::facebookFunc),
                                                       MyPluginsMgr::getInstance(),
                                                       0, 0, delayTime, false);
+
+    delayTime += 2;
+    Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(MyPluginsMgr::fyberFunc),
+                                                      MyPluginsMgr::getInstance(),
+                                                      0, 0, delayTime, false);
+
     return true;
 }

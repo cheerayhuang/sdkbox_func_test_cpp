@@ -13,13 +13,13 @@ class MyPluginsMgr : public cocos2d::Ref
 {
 public:
     static MyPluginsMgr *getInstance();
-    
+
     bool init();
-    
+
     //void applicationWillEnterForeground();
- 
+
 public:
-    
+
     // timer callback functions, for testing plugins.
     void adcolonyFunc(float);
     void chartboostFunc(float);
@@ -31,10 +31,12 @@ public:
     void tuneFunc(float);
     void agecheqFunc(float);
     void facebookFunc(float);
-    
+    void fyberFunc(float);
+
+
 private:
     MyPluginsMgr();
-    
+
     void initAdColony();
     void initChartBoost();
     void initFlurry();
@@ -45,6 +47,7 @@ private:
     void initVungle();
     void initFacebook();
     void initAgeCheq();
+    void initFyber();
 
 };
 
