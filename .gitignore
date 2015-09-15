@@ -74,6 +74,7 @@ FBSDKLoginKit.framework/
 FBSDKShareKit.framework/
 Chartboost.framework/
 PluginChartboost.framework/
+PluginFyber.framework/
 
 proj.android/jni/pluginadcolony/
 proj.android/jni/pluginagecheq/
@@ -86,6 +87,7 @@ proj.android/jni/pluginkochava/
 proj.android/jni/plugintune/
 proj.android/jni/pluginvungle/
 proj.android/jni/sdkbox/
+proj.android/jni/pluginfyber/
 proj.android/libs/
 proj.android/res/xml/
 
