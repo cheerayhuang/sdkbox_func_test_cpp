@@ -86,5 +86,10 @@ bool HelloWorld::init()
                                                       MyPluginsMgr::getInstance(),
                                                       0, 0, delayTime, false);
 
+    delayTime += 2;
+    Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(MyPluginsMgr::reviewFunc),
+                                                      MyPluginsMgr::getInstance(),
+                                                      0, 0, delayTime, false);
+
     return true;
 }

@@ -21,6 +21,7 @@
 #include "PluginFacebook/PluginFacebook.h"
 #include "PluginFlurryAnalytics/PluginFlurryAnalytics.h"
 #include "PluginFyber/PluginFyber.h"
+#include "PluginReview/PluginReview.h"
 
 USING_NS_CC;
 using namespace sdkbox;
@@ -848,6 +849,45 @@ void MyPluginsMgr::fyberFunc(float)
     PluginFyber::requestDeltaOfCoins("rmb");
 }
 
+// Review
+
+class MyRVListener : public sdkbox::ReviewListener {
+public:
+    virtual void onDisplayAlert() override;
+    virtual void onDeclineToRate() override;
+    virtual void onRate() override;
+    virtual void onRemindLater() override;
+};
+
+void MyRVListener::onDisplayAlert() {
+    CCLOG("Review listener didDisplayAlert");
+}
+
+void MyRVListener::onDeclineToRate() {
+    CCLOG("Review listener didDeclineToRate");
+}
+
+void MyRVListener::onRate() {
+    CCLOG("Review listener didToRate");
+}
+
+void MyRVListener::onRemindLater() {
+    CCLOG("Review listener didToRemindLater");
+}
+
+void MyPluginsMgr::initReview()
+{
+    PluginReview::init();
+    PluginReview::setListener(new MyRVListener);
+}
+
+void MyPluginsMgr::reviewFunc(float)
+{
+    CCLOG("[Review] Calling review plugin apis.");
+    PluginReview::show();
+    //PluginReview::show(true);
+}
+
 // method of MyPluginsMgr
 
 MyPluginsMgr::MyPluginsMgr()
@@ -877,6 +917,7 @@ bool MyPluginsMgr::init()
     initFacebook();
     initAgeCheq();
     initFyber();
+    initReview();
 
     return true;
 }

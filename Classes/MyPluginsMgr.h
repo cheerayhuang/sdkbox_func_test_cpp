@@ -32,6 +32,7 @@ public:
     void agecheqFunc(float);
     void facebookFunc(float);
     void fyberFunc(float);
+    void reviewFunc(float);
 
 
 private:
@@ -48,6 +49,7 @@ private:
     void initFacebook();
     void initAgeCheq();
     void initFyber();
+    void initReview();
 
 };
 
