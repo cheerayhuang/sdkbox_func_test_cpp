@@ -768,7 +768,7 @@ void MyPluginsMgr::facebookFunc(float)
 class MyFyberListener : public FyberListener
 {
 private:
-    string BOOL_TO_STRING(bool ok) {
+    std::string BOOL_TO_STRING(bool ok) {
         return ok ? "yes" : "no";
     }
 public:
