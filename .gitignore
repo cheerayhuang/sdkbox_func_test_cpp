@@ -75,6 +75,8 @@ FBSDKShareKit.framework/
 Chartboost.framework/
 PluginChartboost.framework/
 PluginFyber.framework/
+plugin_review_res_bundle/
+PluginReview.framework/
 
 proj.android/jni/pluginadcolony/
 proj.android/jni/pluginagecheq/
@@ -88,8 +90,10 @@ proj.android/jni/plugintune/
 proj.android/jni/pluginvungle/
 proj.android/jni/sdkbox/
 proj.android/jni/pluginfyber/
+proj.android/jni/pluginreview/
 proj.android/libs/
 proj.android/res/xml/
+proj.android/plugin_review_res_project/
 
 
 # installer
