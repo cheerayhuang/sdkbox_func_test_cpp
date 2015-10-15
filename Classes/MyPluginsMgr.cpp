@@ -440,12 +440,12 @@ private:
 
     }
 
-    virtual void onInitialized(bool ok)
+    virtual void onInitialized(bool ok) override
     {
 
     }
 
-    virtual void onRestoreComplete(bool ok, const std::string &msg)
+    virtual void onRestoreComplete(bool ok, const std::string &msg) override
     {
 
     }
@@ -524,7 +524,7 @@ public:
         CCLOG("%s: %s", __FUNCTION__, deeplink.data());
     }
 
-    void onMobileAppTrackerDidFailDeeplinkWithError(const std::string &errorString)
+    void onMobileAppTrackerDidFailDeeplinkWithError(const std::string &errorString) override
     {
         CCLOG("%s: %s", __FUNCTION__, errorString.c_str());
     }
@@ -694,36 +694,36 @@ class MyFacebookListener : public FacebookListener
 public:
     MyFacebookListener(){}
 
-    void onLogin(bool isLogin, const std::string& error)
+    void onLogin(bool isLogin, const std::string& error) override
     {
         CCLOG("##FB isLogin: %d, error: %s", isLogin, error.c_str());
         std::string title = "login ";
         title.append((isLogin ? "success" : "failed"));
         MessageBox(error.c_str(), title.c_str());
     }
-    void onAPI(const std::string& tag, const std::string& jsonData)
+    void onAPI(const std::string& tag, const std::string& jsonData) override
     {
         CCLOG("##FB onAPI: tag -> %s, json -> %s", tag.c_str(), jsonData.c_str());
     }
-    void onSharedSuccess(const std::string& message)
+    void onSharedSuccess(const std::string& message) override
     {
         CCLOG("##FB onSharedSuccess:%s", message.c_str());
 
         MessageBox(message.c_str(), "share success");
     }
-    void onSharedFailed(const std::string& message)
+    void onSharedFailed(const std::string& message) override
     {
         CCLOG("##FB onSharedFailed:%s", message.c_str());
 
         MessageBox(message.c_str(), "share failed");
     }
-    void onSharedCancel()
+    void onSharedCancel() override
     {
         CCLOG("##FB onSharedCancel");
 
         MessageBox("", "share cancel");
     }
-    void onPermission(bool isLogin, const std::string& error)
+    void onPermission(bool isLogin, const std::string& error) override
     {
         CCLOG("##FB onPermission: %d, error: %s", isLogin, error.c_str());
 
@@ -731,7 +731,7 @@ public:
         title.append((isLogin ? "success" : "failed"));
         MessageBox(error.c_str(), title.c_str());
     }
-    void onFetchFriends(bool ok, const std::string& msg)
+    void onFetchFriends(bool ok, const std::string& msg) override
     {
         CCLOG("##FB %s: %d = %s", __FUNCTION__, ok, msg.data());
 
@@ -749,6 +749,22 @@ public:
         }
 
         MessageBox("", "fetch friends");
+    }
+
+    void onRequestInvitableFriends( const FBInvitableFriendsInfo& friends ) override {
+
+    }
+
+    void onInviteFriendsWithInviteIdsResult( bool result, const std::string& msg ) override {
+
+    }
+
+    void onInviteFriendsResult( bool result, const std::string& msg ) override {
+
+    }
+
+    void onGetUserInfo( const FBGraphUser& userInfo ) override {
+
     }
 };
 
@@ -844,8 +860,8 @@ void MyPluginsMgr::fyberFunc(float)
 {
     CCLOG("[Fyber] Calling fyber apis.");
     PluginFyber::requestInterstitial();
-    PluginFyber::showOfferWall("rmb");
-    PluginFyber::showOfferWall("rmb");
+    //PluginFyber::showOfferWall("rmb");
+    //PluginFyber::showOfferWall("rmb");
     PluginFyber::requestDeltaOfCoins("rmb");
 }
 
