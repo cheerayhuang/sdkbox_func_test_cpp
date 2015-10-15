@@ -715,8 +715,6 @@
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
 					"-fobjc-arc",
-					"-force_load",
-					AdColony.framework/AdColony,
 				);
 				PRODUCT_NAME = "sdkbox_func_test_cpp iOS";
 				SDKROOT = iphoneos;
@@ -774,8 +772,6 @@
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
 					"-fobjc-arc",
-					"-force_load",
-					AdColony.framework/AdColony,
 				);
 				PRODUCT_NAME = "sdkbox_func_test_cpp iOS";
 				SDKROOT = iphoneos;
