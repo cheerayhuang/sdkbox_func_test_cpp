@@ -20,7 +20,6 @@
 		21E243039CB76CECE64C2B20 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B98479A86DD2F6D5E2826EF /* libz.1.2.5.dylib */; };
 		24B04EB883D86C3E571301B0 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE849F18AA014E2D9C126CC /* MediaPlayer.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
-		28D7411495A527C8F6CB246B /* PluginAdColony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5936444C96B8743FDD2DFE29 /* PluginAdColony.framework */; };
 		28F4433ABF8C17F948222876 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 890642F9A94E06C8181F8180 /* iAd.framework */; };
 		2D694ED1A9D76EAF0CE7054B /* PluginChartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DD4477486F0A63E67032FE0 /* PluginChartboost.framework */; };
 		306A46EDA078A9D19A9F3828 /* PluginVungle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD14866BFA3CB8D3A565AEE /* PluginVungle.framework */; };
@@ -95,7 +94,6 @@
 		7D4845C39A3AA5F817392453 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38D54F92B90DA04D8F0BB4AC /* Chartboost.framework */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		87D34250A9CF9F8B8851F9F7 /* PluginFacebook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667B448D8DDAB6E487AC5A50 /* PluginFacebook.framework */; };
-		8EAD436397E973170C534D48 /* AdColony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2604D98B34ECCB86492AEA3 /* AdColony.framework */; };
 		90E84280B67CA9A1DC4C4B03 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8F47F386721C430C6FC941 /* Social.framework */; };
 		92AD4A12891CDB4DFB41F89E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E3450D96FC9241F990A328 /* StoreKit.framework */; };
 		95C993861B943C9600EFA80C /* MyPluginsMgr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95C993851B943C9600EFA80C /* MyPluginsMgr.cpp */; };
@@ -251,8 +249,6 @@
 				D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */,
 				1E2446B7A999BED52744973F /* libcocos2d iOS.a in Frameworks */,
 				DF8049F688CE6128066E7E87 /* sdkbox.framework in Frameworks */,
-				28D7411495A527C8F6CB246B /* PluginAdColony.framework in Frameworks */,
-				8EAD436397E973170C534D48 /* AdColony.framework in Frameworks */,
 				9A1C417CA91EBB1474CE8928 /* libz.1.2.5.dylib in Frameworks */,
 				CCA2458D808460BC9EDBCA65 /* AdSupport.framework in Frameworks */,
 				E38042F6A61D2701348726B8 /* CoreMedia.framework in Frameworks */,
