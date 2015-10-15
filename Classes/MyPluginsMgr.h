@@ -21,7 +21,7 @@ public:
 public:
 
     // timer callback functions, for testing plugins.
-    void adcolonyFunc(float);
+    //void adcolonyFunc(float);
     void chartboostFunc(float);
     void vungleFunc(float);
     void flurryFunc(float);
@@ -31,14 +31,14 @@ public:
     void tuneFunc(float);
     void agecheqFunc(float);
     void facebookFunc(float);
-    void fyberFunc(float);
+    //void fyberFunc(float);
     void reviewFunc(float);
 
 
 private:
     MyPluginsMgr();
 
-    void initAdColony();
+    //void initAdColony();
     void initChartBoost();
     void initFlurry();
     void initGoogleAnalytics();
@@ -48,7 +48,7 @@ private:
     void initVungle();
     void initFacebook();
     void initAgeCheq();
-    void initFyber();
+    //void initFyber();
     void initReview();
 
 };

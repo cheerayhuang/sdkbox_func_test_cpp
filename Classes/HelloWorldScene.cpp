@@ -34,9 +34,9 @@ bool HelloWorld::init()
     }
 
     float delayTime = 2;
-    Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(MyPluginsMgr::adcolonyFunc),
+    /*Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(MyPluginsMgr::adcolonyFunc),
                                                       MyPluginsMgr::getInstance(),
-                                                      0, 0, delayTime, false);
+                                                      0, 0, delayTime, false);*/
     delayTime += 2;
     Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(MyPluginsMgr::chartboostFunc),
                                                       MyPluginsMgr::getInstance(),
@@ -81,10 +81,10 @@ bool HelloWorld::init()
                                                       MyPluginsMgr::getInstance(),
                                                       0, 0, delayTime, false);
 
-    delayTime += 2;
+    /*delayTime += 2;
     Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(MyPluginsMgr::fyberFunc),
                                                       MyPluginsMgr::getInstance(),
-                                                      0, 0, delayTime, false);
+                                                      0, 0, delayTime, false);*/
 
     delayTime += 2;
     Director::getInstance()->getScheduler()->schedule(CC_SCHEDULE_SELECTOR(MyPluginsMgr::reviewFunc),

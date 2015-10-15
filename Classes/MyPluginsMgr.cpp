@@ -10,7 +10,7 @@
 
 #include "MyPluginsMgr.h"
 
-#include "PluginAdcolony/PluginAdcolony.h"
+//#include "PluginAdcolony/PluginAdcolony.h"
 #include "PluginAgeCheq/PluginAgeCheq.h"
 #include "PluginChartboost/PluginChartboost.h"
 #include "PluginVungle/PluginVungle.h"
@@ -20,14 +20,14 @@
 #include "PluginTune/PluginTune.h"
 #include "PluginFacebook/PluginFacebook.h"
 #include "PluginFlurryAnalytics/PluginFlurryAnalytics.h"
-#include "PluginFyber/PluginFyber.h"
+//#include "PluginFyber/PluginFyber.h"
 #include "PluginReview/PluginReview.h"
 
 USING_NS_CC;
 using namespace sdkbox;
 
 //adcolony
-
+/*
 class ADListener : public sdkbox::AdColonyListener
 {
 public:
@@ -85,7 +85,7 @@ void MyPluginsMgr::adcolonyFunc(float)
     PluginAdColony::show("video");
     PluginAdColony::show("v4vc");
 
-}
+}*/
 
 // Chartboost
 
@@ -781,6 +781,7 @@ void MyPluginsMgr::facebookFunc(float)
 
 // fyber
 //
+/*
 class MyFyberListener : public FyberListener
 {
 private:
@@ -864,7 +865,7 @@ void MyPluginsMgr::fyberFunc(float)
     //PluginFyber::showOfferWall("rmb");
     PluginFyber::requestDeltaOfCoins("rmb");
 }
-
+*/
 // Review
 
 class MyRVListener : public sdkbox::ReviewListener {
@@ -922,7 +923,7 @@ MyPluginsMgr *MyPluginsMgr::getInstance()
 
 bool MyPluginsMgr::init()
 {
-    initAdColony();
+    //initAdColony();
     initChartBoost();
     initFlurry();
     initGoogleAnalytics();
@@ -932,7 +933,7 @@ bool MyPluginsMgr::init()
     initVungle();
     initFacebook();
     initAgeCheq();
-    initFyber();
+    //initFyber();
     initReview();
 
     return true;
