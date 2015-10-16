@@ -689,7 +689,7 @@
 					"/private/var/jenkins/engines-prebuilt/cocos2d-x-3.6/cocos/platform/ios/Simulation",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"/private/var/jenkins/engines-prebuilt/cocos2d-x-3.6/prebuilt/ios",
 					"\"sdkbox.framework\"",
@@ -746,7 +746,7 @@
 					"/private/var/jenkins/engines-prebuilt/cocos2d-x-3.6/cocos/platform/ios/Simulation",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"/private/var/jenkins/engines-prebuilt/cocos2d-x-3.6/prebuilt/ios",
 					"\"sdkbox.framework\"",
