@@ -96,6 +96,7 @@
 		87D34250A9CF9F8B8851F9F7 /* PluginFacebook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667B448D8DDAB6E487AC5A50 /* PluginFacebook.framework */; };
 		90E84280B67CA9A1DC4C4B03 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8F47F386721C430C6FC941 /* Social.framework */; };
 		92AD4A12891CDB4DFB41F89E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E3450D96FC9241F990A328 /* StoreKit.framework */; };
+		9514479E1BDF724600ECBE62 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9514479D1BDF724600ECBE62 /* libiconv.tbd */; };
 		95C993861B943C9600EFA80C /* MyPluginsMgr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95C993851B943C9600EFA80C /* MyPluginsMgr.cpp */; };
 		9A1C417CA91EBB1474CE8928 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B98479A86DD2F6D5E2826EF /* libz.1.2.5.dylib */; };
 		9B7541359559C0696DFAA124 /* PluginFlurryAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28AE4354918C89FA44CE9795 /* PluginFlurryAnalytics.framework */; };
@@ -203,6 +204,7 @@
 		85924B01B1EE8B5D5D0F52B3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
 		890642F9A94E06C8181F8180 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/iAd.framework; sourceTree = DEVELOPER_DIR; };
 		8B98479A86DD2F6D5E2826EF /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libz.1.2.5.dylib; sourceTree = DEVELOPER_DIR; };
+		9514479D1BDF724600ECBE62 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/usr/lib/libiconv.tbd; sourceTree = DEVELOPER_DIR; };
 		95C993841B943B2B00EFA80C /* MyPluginsMgr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyPluginsMgr.h; sourceTree = "<group>"; };
 		95C993851B943C9600EFA80C /* MyPluginsMgr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyPluginsMgr.cpp; sourceTree = "<group>"; };
 		9F544443B9E153E07908358D /* PluginIAP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PluginIAP.framework; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9514479E1BDF724600ECBE62 /* libiconv.tbd in Frameworks */,
 				52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */,
 				D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
@@ -384,6 +387,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9514479D1BDF724600ECBE62 /* libiconv.tbd */,
 				D2604D98B34ECCB86492AEA3 /* AdColony.framework */,
 				39FA4B79A99EB1196B2A7759 /* AdSupport.framework */,
 				5087E78817EB974C00C73F5D /* AppKit.framework */,
