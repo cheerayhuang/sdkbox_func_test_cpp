@@ -12,7 +12,7 @@ def trim_folder(f):
 
 def import_plugins(plugins_dir, is_plugins=True):
     if not is_plugins:
-        cmd = ['sdkbox.py', '--noupdate', '-vv', 'import', '-b', plugins_dir]
+        cmd = ['sdkbox', '--noupdate', '-vv', 'import', '-b', plugins_dir]
         print '# Call: ' + ' '.join(cmd)
         if subprocess.call(cmd) != 0:
             return 1
@@ -22,7 +22,7 @@ def import_plugins(plugins_dir, is_plugins=True):
     for c in contents:
         p = os.path.join(plugins_dir, c)
         if os.path.isdir(p) and c.find('for_v2') < 0:
-            cmd = ['sdkbox.py', '--noupdate', '-vv', 'import', '-b', p]
+            cmd = ['sdkbox', '--noupdate', '-vv', 'import', '-b', p]
             print '# Call: ' + ' '.join(cmd)
             if subprocess.call(cmd) != 0:
                 return 1
